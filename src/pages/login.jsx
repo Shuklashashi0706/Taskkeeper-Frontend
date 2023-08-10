@@ -6,8 +6,8 @@ function Login() {
     <div className="login">
       <section>
         <form action="">
-          <input type="email" name="" id="" placeholder="Email" />
-          <input type="password" name="" id="" placeholder="Password" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
           <button type="submit">Login</button>
           <h4>Or</h4>
           <Link to={"/register"}>Sign Up</Link>
