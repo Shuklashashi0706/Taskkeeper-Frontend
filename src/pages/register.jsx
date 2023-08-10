@@ -11,25 +11,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        `${server}/users/api/v1/new`,
-        {
-          name,
-          email,
-          password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Headers":
-              "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
-            "Access-Control-Allow-Methods": "OPTIONS,POST",
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": "*",
-          },
-          withCredentials: true,
-        }
-      );
+      const { data } = await axios.post(`${server}/users/api/v1/new`, { name, email, password });
       toast.success(data.message);
     } catch (error) {
       toast.error("Some error");
